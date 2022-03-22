@@ -38,6 +38,13 @@ module.exports = {
      {
       test: /\.png$/,
       type: 'asset/resource',
+    },
+    {
+      test: /\.(woff|woff2)$/,
+      type: "asset/resource",
+      generator: {
+        filename: "assets/fonts/[name][ext]"
+      }
     }
     ]
   },
