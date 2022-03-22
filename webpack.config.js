@@ -9,7 +9,7 @@ module.exports = {
   entry: "./src/index.js",
   output: {
     path: path.resolve(__dirname, "./dist"),
-    filename: "main.js",
+    filename: "[name].[contenthash].js",
     assetModuleFilename:"assets/images/[hash][ext][query]"
   },
   resolve: {
@@ -44,7 +44,7 @@ module.exports = {
       test: /\.(woff|woff2)$/,
       type: "asset/resource",
       generator: {
-        filename: "assets/fonts/[name][ext]"
+        filename: "assets/fonts/[name].[contenthash].[ext]"
       }
     }
     ]
@@ -53,7 +53,9 @@ module.exports = {
     new HtmlWebpackPlugin({
       template: path.resolve(__dirname, "./public/index.html"),
     }),
-    new MiniCssExtractPlugin(),
+    new MiniCssExtractPlugin({
+      filename: "[name].[contenthash].css",
+    }),
     new CopyPlugin({
       patterns:[
         {
