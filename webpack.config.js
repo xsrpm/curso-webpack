@@ -9,7 +9,7 @@ module.exports = {
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "main.js",
-    assetModuleFilename:"images/[hash][ext]"
+    assetModuleFilename:"assets/images/[hash][ext][query]"
   },
   resolve: {
     extensions: [".js"],
