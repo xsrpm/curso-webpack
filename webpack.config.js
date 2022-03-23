@@ -1,17 +1,18 @@
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CopyPlugin = require('copy-webpack-plugin')
 const CssMinimizerPlugin = require('css-minimizer-webpack-plugin')
 const Dotenv = require('dotenv-webpack');
 
 /** @type {import('webpack').Configuration} */
 module.exports = {
   entry: "./src/index.js",
+  mode:"production",
   output: {
     path: path.resolve(__dirname, "./dist"),
     filename: "[name].[contenthash].js",
-    assetModuleFilename:"assets/images/[hash][ext][query]"
+    assetModuleFilename:"assets/images/[hash][ext][query]",
+    clean: true
   },
   resolve: {
     extensions: [".js"],
@@ -59,14 +60,6 @@ module.exports = {
     }),
     new MiniCssExtractPlugin({
       filename: "[name].[contenthash].css",
-    }),
-    new CopyPlugin({
-      patterns:[
-        {
-          from: path.resolve(__dirname, "src","assets/images"),
-          to: "assets/images"
-        }
-      ]
     }),
     new Dotenv()
   ],
