@@ -4,6 +4,7 @@
   "description": "A minimal portfolio with Vanilla JavaScript",
   "main": "index.js",
   "scripts": {
+    "build:watch": "webpack --config webpack.config.dev.js --watch",
     "serve:dev": "webpack --config webpack.config.dev.js && npx serve dist -s",
     "serve:prod": "webpack --config webpack.config.js && npx serve dist -s"
   },
