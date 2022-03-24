@@ -1,5 +1,12 @@
 # js-portfolio
 
+## Requerimientos
+Es requerido agregar un archivo .env
+con la api de randomuser
+
+      API=https://randomuser.me/api/
+
+
 ## Fixing Uncaught ReferenceError: regeneratorRuntime is not defined
 https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-defined
 
@@ -8,4 +15,5 @@ https://stackoverflow.com/questions/33527653/babel-6-regeneratorruntime-is-not-d
  https://babeljs.io/docs/en/babel-plugin-transform-runtime
 
     npm install @babel/plugin-transform-runtime -D -E
+
 
